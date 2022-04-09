@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Course Management System</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="#" th:href="@{/css/style.css}">
+</head>
+
+<body>
+	<div th:replace="fragments/header :: 'header' (module='student')">
+		header</div>
+	<div class="mx-sm-3">
+		<a href="#" th:href="@{/student/add}">Add a student</a>
+		<p>The following students are registered for this semester:</p>
+	</div>
+	<div th:replace="fragments/footer :: 'footer'">&copy; 2016 The
+		Static Templates</div>
+
+</body>
+
+</html>

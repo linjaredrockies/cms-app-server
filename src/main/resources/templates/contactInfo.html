@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Course Management System</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!--  link rel="stylesheet" type="text/css" media="all" 
+          href="../../css/gtvg.css" th:href="@{/css/gtvg.css}" /-->
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="#" th:href="@{/css/style.css}">
+</head>
+
+<body>
+	<div th:replace="fragments/header :: 'header' (module='contact')">
+		&copy; 2016 The Static Templates</div>
+
+
+<div class="container">
+<p>Telephone: 876123098</p>
+<p>Fax: 123456789</p>
+<p>email: admin@testschool.org</p>
+</div>
+	<div th:replace="fragments/footer :: 'footer'">&copy; 2016 The
+		Static Templates</div>
+
+</body>
+
+</html>

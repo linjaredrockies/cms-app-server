@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    ...
+  </head>
+  <body>
+    <div class="navbar navbar-inverse navbar-fixed-top" th:fragment="header(module)">
+    <h1>Course Management System (CMS)</h1>
+    <p/>
+		<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+    	      <div class="navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item" th:classappend="${module == 'home' ? 'active' : ''}"><a href="/" class="nav-link">Home</a></li>
+	        	<li class="nav-item" th:classappend="${module == 'course' ? 'active' : ''}"><a href="#" th:href="@{/courses}" class="nav-link">Courses</a></li>
+	        	<li class="nav-item" th:classappend="${module == 'schedule' ? 'active' : ''}"><a href="#" th:href="@{/schedule}" class="nav-link">Schedule</a></li>
+	        	<li class="nav-item" th:classappend="${module == 'classroom' ? 'active' : ''}"><a href="#" th:href="@{/classrooms}" class="nav-link">Classrooms</a></li>
+	        	<li class="nav-item" th:classappend="${module == 'teacher' ? 'active' : ''}"><a href="#" th:href="@{/teachers}" class="nav-link">Teachers</a></li>
+	        	<li class="nav-item" th:classappend="${module == 'student' ? 'active' : ''}"><a href="#" th:href="@{/studentList}" class="nav-link">Students</a></li>
+	        	<li class="nav-item" th:classappend="${module == 'contact' ? 'active' : ''}"><a href="#" th:href="@{/contact}" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	      </div>
+    </div>
+	  </nav>
+  </body>
+</html>

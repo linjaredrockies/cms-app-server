@@ -8,6 +8,8 @@
 *.ctxt
 
 .classpath
+.project
+
 # Build folder for maven
 target/
 
