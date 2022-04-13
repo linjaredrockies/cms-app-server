@@ -9,18 +9,59 @@
 	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700'
 	rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="#" th:href="@{/css/style.css}">
+<link rel="stylesheet" type="text/css"
+	href="DataTables/datatables.min.css" th:href="@{/css/DataTables/datatables.min.css}"/>
+
 </head>
 
 <body>
 	<div th:replace="fragments/header :: 'header' (module='student')">
 		header</div>
 	<div class="mx-sm-3">
+		<p th:if="${message != null}" th:text="${message}">message</p>
 		<a href="#" th:href="@{/student/add}">Add a student</a>
 		<p>The following students are registered for this semester:</p>
+		<table id='dashboard' name='dashboard'>
+			<thead>
+				<tr>
+					<th>Student Number</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Phone Number</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:if="${students.empty}">
+					<td colspan="2">No Students Found</td>
+				</tr>
+				<tr th:each="student : ${students}">
+					<td><span th:text="${student.studentNumber}"> Student Number </span></td>
+					<td><span th:text="${student.firstName}"> First Name </span></td>
+					<td><span th:text="${student.lastName}"> Last Name </span></td>
+					<td><span th:text="${student.phoneNumber}"> PhoneNumber </span></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
-	<div th:replace="fragments/footer :: 'footer'">&copy; 2016 The
-		Static Templates</div>
-
+	<div th:replace="fragments/footer :: 'footer'">&copy; copywright
+		and other info</div>
+	<div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" th:src="@{/js/DataTables/datatables.min.js}"></script>
+		<script>
+			$(document).ready(function() {
+				$('#dashboard').DataTable({  
+			        "bAutoWidth": false,
+			        "aoColumns" : [
+			            { sWidth: '30px' },
+			            { sWidth: '50px' },
+			            { sWidth: '50px' },
+			            { sWidth: '30px' }
+			        ]  
+			    });
+			});
+		</script>
+	</div>
 </body>
 
 </html>

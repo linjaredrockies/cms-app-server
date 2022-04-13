@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Course Management System</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link
+	href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="#" th:href="@{/css/style.css}">
+</head>
+
+<body>
+	<div th:replace="fragments/header :: 'header' (module='student')">
+		header</div>
+	<div class="mx-sm-3">
+		<h2>Add a student</h2>
+		<form action="#" th:action="@{/student/add}" th:object="${student}" method="post">
+			<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
+			<p>Student Number: <input type="text" th:field="*{studentNumber}" /></p>
+			<p>First Name: <input type="text" th:field="*{firstName}" /></p>
+			<p>Last Name: <input type="text" th:field="*{lastName}" /></p>
+			<p>Phone Number: <input type="text" th:field="*{phoneNumber}" /></p>
+			<p>
+				<input type="submit" value="Submit" /> 
+				<input type="reset" value="Reset" />
+			</p>
+		</form>
+	</div>
+	<div th:replace="fragments/footer :: 'footer'">&copy; copywright
+		and other info</div>
+
+</body>
+
+</html>

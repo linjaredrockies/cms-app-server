@@ -9,33 +9,22 @@ import javax.persistence.Table;
 
 @Entity
 @Table
-public class Student {
+public class Teacher {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	@Column(nullable = false, unique=true)
-	private Integer studentNumber;
+	private String email;
 	@Column(nullable = false)
 	private String firstName;
 	@Column(nullable = false)
 	private String lastName;
 	private String phoneNumber;
 
-	public Student() {
-	}
-
-	public Student(Integer studentNumber, String firstName, String lastName, String phoneNumber) {
-		this.studentNumber = studentNumber;
+	public Teacher(String email, String firstName, String lastName, String phoneNumber) {
+		this.email = email;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.phoneNumber = phoneNumber;
-	}
-
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 
@@ -43,12 +32,12 @@ public class Student {
 		return id;
 	}
 
-	public Integer getStudentNumber() {
-		return studentNumber;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setStudentNumber(Integer studentNumber) {
-		this.studentNumber = studentNumber;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getFirstName() {
@@ -66,5 +55,14 @@ public class Student {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
+
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
 
 }
